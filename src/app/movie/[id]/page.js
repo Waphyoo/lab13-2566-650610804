@@ -1,16 +1,13 @@
 "use client";
-
 import { movieDB } from "@/libs/movieDB";
 import { IconStar } from "@tabler/icons-react";
 
-export default function MovieIdPage({ params }) {
+export default function MovieId({ params }) {
   const id = Number(params.id);
-  const selMovie = movieDB.find((movie) => movie.id === id);
-
+  const selMovie = movieDB.find((m) => m.id === id);
   if (!selMovie) {
-    return <p className="text-center">Movie is not found 😥</p>;
+    return <p className="text-center">Movie is not found</p>;
   }
-
   return (
     <div className="d-flex justify-content-center gap-3">
       <img src={selMovie.imgSrc} width="200" />

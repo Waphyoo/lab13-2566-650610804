@@ -1,16 +1,17 @@
 import { MovieRow } from "@/components/MovieRow";
 import { movieDB } from "@/libs/movieDB";
 
-export default function MoviePage() {
+export default function Movie() {
   return (
-    <div>
-      <p className="fw-bold fs-4 text-center">Top 10 Movies</p>
-      {movieDB.map((movie, i) => (
+    <div className="text-center">
+      <p className="fw-bold fs-4">Top 10 Movies</p>
+      {movieDB.map((m, i) => (
         <MovieRow
-          id={movie.id}
-          title={movie.title}
-          detail={movie.detail}
-          rating={movie.rating}
+          key={m.id}
+          id={m.id}
+          title={m.title}
+          detail={m.detail}
+          rating={m.rating}
           number={i + 1}
         />
       ))}
